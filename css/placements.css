@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #202020;
+  background-color:  #202020;
   color: #E0E1DD;
   line-height: 1.6;
 }
@@ -57,53 +57,67 @@ main {
   color: #E0E1DD;
 }
 
-.iframe-container {
+
+.partner {
+  text-align: center;
+  padding: 40px 0;
+  background-color: #f8f8f8;
+}
+.partner p a {
+  color: green; /* Orange color for links */
+  font-weight: bold;
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+/* Flexbox container for YouTube & Facebook */
+.media-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  margin-bottom: 20px;
+  gap: 20px; /* Space between them */
+  flex-wrap: wrap; /* Wraps on small screens */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.iframe-container iframe {
-  width: 100%;
-  max-width: 560px;
-  height: 315px;
+/* Common styles for both iframes */
+.media-container iframe {
+  width: 500px;  /* Set a fixed width */
+  height: 315px; /* Match YouTube default height */
   border: none;
 }
 
-.facebook-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.facebook-container iframe {
-  width: 50%;
-  height: 750px;
-  border: none;
+/* Make them responsive */
+@media (max-width: 1024px) {
+  .media-container {
+      flex-direction: column; /* Stack on smaller screens */
+  }
+  .media-container iframe {
+      width: 90%; /* Make it responsive */
+      height: auto;
+  }
 }
 
 .recruiters {
   padding: 60px 0;
-  background-color: #ffffff;
+  background-color:  #202020;
 }
 
 .recruiters h2 {
   font-size: 2.5rem;
   margin-bottom: 30px;
-  color: #000000;
+  color: white;
 }
 
 .recruiter-logos {
   display: flex;
+
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px; /* Increased space between logos */
   padding: 20px;
-  background-color: #fff; /* Light background for the section */
+  background-color: #202020; /* Light background for the section */
 }
 
 .recruiter-logos img {
@@ -119,16 +133,71 @@ main {
   transform: scale(1.1); /* Slightly enlarge on hover */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
 }
+/* Recruiter Section */
+.recruiters {
+  padding: 60px 0;
+  background-color: #202020;
+  text-align: center;
+  overflow: hidden;
+}
+
+.recruiters h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: white;
+}
+
+/* Logo Slider Container */
+.logo-slider {
+  width: 80%; /* Limits width */
+  max-width: 1100px; /* Prevents it from being too wide */
+  margin: 0 auto; /* Centers the section */
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+/* Logo Track for Continuous Animation */
+.logo-track {
+  display: flex;
+  gap: 30px;
+  animation: scroll 20s linear infinite;
+}
+
+/* Logo Images */
+.logo-track img {
+  height: 80px;
+  border-radius: 12px;
+  padding: 5px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-track img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation for Infinite Scrolling */
+@keyframes scroll {
+  from {
+      transform: translateX(0);
+  }
+  to {
+      transform: translateX(-50%);
+  }
+}
 
 .partner {
   padding: 60px 0;
-  background-color: #ffffff;
+  background-color: #202020;
 }
 
 .partner h2 {
   font-size: 2.5rem;
   margin-bottom: 30px;
-  color: #000000;
+  color: white;
 }
 
 .partner-logos {
@@ -137,7 +206,7 @@ main {
   justify-content: center;
   gap: 30px; /* Increased space between logos */
   padding: 20px;
-  background-color: #fff; /* Light background for the section */
+  background-color: #202020; /* Light background for the section */
 }
 
 .partner-logos img {
@@ -145,14 +214,16 @@ main {
   width: 400px;
   border-radius: 12px; /* Rounded corners */
   padding: 10px;
-  background-color: #ffffff; /* White background for logos */
+  background-color:  #454444; /* White background for logos */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .partner-logos img:hover {
-  transform: scale(1.1); /* Slightly enlarge on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+  
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #876eea;
+    /* #876eea */
 }
 
 .footer {
