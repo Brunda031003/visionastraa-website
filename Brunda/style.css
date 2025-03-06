@@ -20,8 +20,13 @@ header {
 }
 
 .logo {
-    font-weight: bold;
-    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
 }
 
 nav ul {
@@ -32,7 +37,7 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 10px;
 }
 
 nav ul li a {
@@ -54,19 +59,55 @@ nav ul li a.active {
     border-radius: 20px;
     cursor: pointer;
 }
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        display: none; /* Initially hidden */
+    }
+
+    nav ul.active {
+        display: flex; /* Show when active */
+    }
+
+    .get-started {
+        margin-top: 10px;
+    }
+}
+
+/* Hero Section */
+.hero {
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 24px;
+}
+
+.hero p {
+    font-size: 16px;
+    line-height: 1.5;
+}
 
 /* New Users Stats */
 .stats {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 15px;
     margin-top: 30px;
     flex-wrap: wrap;
 }
 
 .stat-box {
-    width: 150px;
-    height: 100px;
+    width: 120px;
+    height: 80px;
     background-color: #E8E8E8;
     border-radius: 10px;
     display: flex;
@@ -93,19 +134,35 @@ nav ul li a.active {
 }
 
 /* Color Variations */
-.purple { background-color: #C7B0F5; }
-.green { background-color: #B6EAD8; }
-.pink { background-color: #F5B5B0; }
-.blue { background-color: #D0CCF5; }
+.purple { background-color: #effcfa; }
+.green { background-color: #F2F2FD; }
+.pink { background-color: #F5F2FD; }
+.blue { background-color: #FDF1F5; }
 
 /* Recruiters & Mentors Section */
-.recruiters, .mentors {
+.recruiters {
     margin-top: 50px;
-    padding: 30px 0;
-    background: white;
+    padding: 50px 0;
+    background-image: url('images/Group\ 110\ \(2\).png'); /* Background for Recruiters */
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
     position: relative;
     z-index: 10;
 }
+
+.mentors {
+    margin-top: 50px;
+    padding: 50px 0;
+    background-image: url('images/Group\ 110\ \(3\).png'); /* Background for Mentors */
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 10;
+}
+
+
 
 h2 {
     font-size: 24px;
@@ -211,10 +268,16 @@ h2 {
 
 /* featured post */
 .featured-posts {
-    margin: 50px auto;
     position: relative;
-    padding: 20px;
+    padding: 50px 20px;
+    background-image: url('images/Group\ 11.png'); /* Add your image path */
+    background-size: 50%;
+    height: 340px; /* Ensures image covers the section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repetition */
+    color: white; /* Adjust text color for better visibility */
 }
+
 
 .carousel-container {
     display: flex;
@@ -359,4 +422,32 @@ h2 {
     width: 100%;
     height: 100%;
     transform: rotate(-30deg);
+}
+
+/* Mobile Navigation Menu */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        display: flex;  /* Ensure the menu is always visible */
+        text-align: center;
+    }
+
+    nav ul li {
+        padding: 8px 0;
+    }
+
+    .menu-toggle {
+        display: none; /* Hide hamburger menu since navbar is always visible */
+    }
+
+    .get-started {
+        margin-top: 10px;
+    }
 }
